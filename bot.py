@@ -4,7 +4,7 @@ import responses
 from discord.ext import commands
 
 intents = discord.Intents.all()
-TOKEN = 'MTAyMjI2MTM5NDg0MzkxMDE2NA.Gz3Spj.IpKGZjwVzRDxtMlMX-DiPsWYU08QN6fMlQXM2Y'
+TOKEN = 'MTAyMjI2MTM5NDg0MzkxMDE2NA.G3a9ic.d'
 bot = commands.Bot(command_prefix = "?",intents=intents)
 
 async def send_message(message, user_message, is_private):
@@ -13,8 +13,7 @@ async def send_message(message, user_message, is_private):
         if(response):
             await message.author.send(response) if is_private else await message.channel.send(response)
         else:
-            await message.author.send('Invalid request. Please refer to `!help` for aid.') if is_private else await message.channel.send('Invalid request. Please refer to `!help` for aid.')
-
+             return
 
 
 def run_discord_bot():
