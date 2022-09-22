@@ -4,19 +4,28 @@ import responses
 from discord.ext import commands
 
 intents = discord.Intents.all()
-TOKEN = 'MTAyMjI2MTM5NDg0MzkxMDE2NA.G3a9ic.d9P8rSODds0DOmYc6ExHjJFViwZ94xU9I68Ff0'
+TOKEN = 'MTAyMjI2MTM5NDg0MzkxMDE2NA.GxOK3Y._U84DZuF2NHMyp-cZ3etEyYacFaHVejGuTwmhY'
 bot = commands.Bot(command_prefix = "?",intents=intents)
 
 async def send_message(message, user_message, is_private):
-    if(message.channel.name == 'mafia'):
-        try:
-            response = responses.handle_response(user_message)
-            await message.author.send(response) if is_private else await message.channel.send(response)
-        except Exception as e:
-            print(e)
-            pass
-    else:
-        return
+
+        if isinstance(message.channel, discord.channel.DMChannel):
+            try:
+                response = responses.handle_response(user_message)
+                await message.author.send(response) if is_private else await message.channel.send(response)
+            except Exception as e:
+                print(e)
+                pass
+        elif(message.channel.name == 'mafia'):
+            try:
+                    response = responses.handle_response(user_message)
+                    await message.author.send(response) if is_private else await message.channel.send(response)
+            except Exception as e:
+                print(e)
+                pass
+        else:
+            return
+
 
 
 def run_discord_bot():
