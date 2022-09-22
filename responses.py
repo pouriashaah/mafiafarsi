@@ -12,8 +12,8 @@ help_text = [
 roles_text = [
     "**Roles:**",
      "Type `commands` below with `!roles` at the start of it to receive details about it.`(example:!roles citizen)`",
-    "`citizen`: city-aligned role. No special powers.",
-    "`mafia`: Mafia-aligned role. Capable of killing a citizen during nighttime with fellow mafia."
+    "**1.**:`citizen`",
+    "**2.**:`mafia`"
 ]
 
 start_guide_text = [
